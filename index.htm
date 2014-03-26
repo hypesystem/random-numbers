@@ -5,9 +5,34 @@
 			body {
 				text-align: center;
 			}
+			form span, form input {
+				vertical-align: middle;
+			}
 		</style>
 	</head>
 	<body>
-		<iframe width="560" height="315" src="//www.youtube.com/embed/SxP30euw3-0" frameborder="0" allowfullscreen></iframe>
+		<section>
+			<h1>Random Numbers</h1>
+			<p>Choose a random number between 1 and 10:</p>
+			<form>
+				<input type="range" min="1" max="10" value="5" id="number" name="number">
+				<span id="random-number-val">5</span>
+				<br>
+				<button>Submit</button>
+			</form>
+		</section>
+		
+		<section>
+			<iframe width="560" height="315" src="//www.youtube.com/embed/SxP30euw3-0" frameborder="0" allowfullscreen></iframe>
+		</section>
+		
+		<script>
+			var slider = document.getElementById("number");
+			var val_display = document.getElementById("random-number-val");
+			
+			slider.oninput = function() {
+				val_display.textContent = slider.value;
+			};
+		</script>
 	</body>
 </html>
